@@ -10,8 +10,10 @@ make
 make install
 
 echo "-----> Remove current curl"
-apt purge curl
 
+curl -V
+apt purge curl
+curl -V
 cd /tmp
 
 echo "-----> Fetching and installing curl"
@@ -23,6 +25,6 @@ cd curl
 ./configure --disable-libcurl-option --disable-shared --with-libssh2=/usr/local
 make
 make install
-
+curl -V
 
 echo "-----> curl with sftp installed"
